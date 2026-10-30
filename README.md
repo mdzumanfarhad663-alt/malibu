@@ -5,7 +5,7 @@ Seven-page static HTML/CSS/vanilla JS prototype. No framework or build step. For
 ## Files
 
 ```text
-malibu-prototype/
+malibu/ (repository root)
   index.html
   rooms.html
   property.html

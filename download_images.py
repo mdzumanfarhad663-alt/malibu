@@ -1,5 +1,5 @@
 import concurrent.futures, urllib.request, pathlib
-root=pathlib.Path('malibu-prototype/assets/images')
+root=pathlib.Path(__file__).resolve().parent/'assets/images'
 items={
 'logo.png':'https://images.squarespace-cdn.com/content/v1/66cfa34cca45f52ace438831/1724883794190-LBUEUDP8XOQWDQXSRGVK/malibu+logo.png',
 'pool-main.jpg':'https://h-img3.cloudbeds.com/uploads/245933/f_adsf~~65f0af61620ca.jpg',
