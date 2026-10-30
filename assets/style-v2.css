@@ -144,3 +144,84 @@ body{color:var(--navy)}
 .location-content h2{max-width:760px}
 .location-content h2 em{color:#ffd166}
 @media(max-width:620px){.location-band{min-height:530px}.location-photo{height:100%;background-position:center}.location-overlay{background:linear-gradient(90deg,#102333bf,#10233368)}.location-content{padding:58px 0}.location-content h2{font-size:32px}}
+
+/* Final site refinements */
+.site-header,.home-page .site-header,.home-page .site-header.scrolled{position:fixed;inset:0 0 auto;z-index:80;background:transparent;border:0;box-shadow:none;transition:background .25s ease,box-shadow .25s ease}
+.site-header:not(.scrolled) .desktop-nav a{color:#fff}
+.site-header:not(.scrolled):not(.menu-active) .brand img{filter:brightness(0) invert(1)}
+.site-header:not(.scrolled):not(.menu-active) .menu-toggle span{background:#fff}
+.site-header.scrolled,.home-page .site-header.scrolled{background:var(--cream);border-bottom:1px solid #e8e1d8;box-shadow:0 8px 24px #14213d1c}
+.site-header.scrolled .brand img{filter:none}
+.site-header.menu-active{background:var(--cream)}
+.site-header.menu-active .brand img{filter:none}
+.site-header.menu-active .menu-toggle span{background:var(--navy)}
+.hero{overflow:hidden}
+.hero-image{background-image:url('images/property-03.jpg');transform-origin:center 75%;animation:hero-drift 12s ease-in-out infinite alternate}
+@keyframes hero-drift{from{transform:scale(1)}to{transform:scale(1.05)}}
+.hero h1 span:first-child,.hero h1 span:nth-child(2){display:inline-block}
+.hero h1 span:last-child{display:block}
+.hero h1 span{opacity:0;transform:translateY(22px);animation:headline-rise .75s var(--ease) forwards}
+.hero h1 span:nth-child(2){animation-delay:.1s}.hero h1 span:nth-child(3){animation-delay:.2s}
+@keyframes headline-rise{to{opacity:1;transform:translateY(0)}}
+.feature-block,.rooms-strip-section,.extras-section,.rewards-section,.section{padding-block:72px}
+.section.compact{padding-top:72px}
+.feature-media{position:relative}
+.feature-media img,.feature-media .retro-poster{max-height:480px}
+.pool-badge{position:absolute;right:20px;top:20px;z-index:2;display:grid;place-items:center;width:114px;height:114px;padding:20px;background:var(--yellow);color:var(--navy);font:20px/1.05 var(--display);text-align:center;transform:rotate(12deg);clip-path:polygon(50% 0%,59% 10%,70% 3%,75% 17%,88% 14%,88% 28%,100% 34%,93% 47%,100% 57%,87% 65%,88% 80%,74% 81%,67% 96%,54% 89%,43% 100%,34% 88%,20% 92%,18% 77%,5% 72%,12% 59%,0% 50%,12% 40%,5% 27%,20% 22%,24% 8%,38% 12%)}
+.highlight-strip{position:relative;z-index:2;display:flex;overflow:hidden;min-height:66px;background:var(--cream);border-bottom:1px solid #e7e1d7}
+.highlight-track{display:flex;align-items:center;justify-content:space-around;flex:1;gap:22px;padding:12px 20px;white-space:nowrap}
+.highlight-track[aria-hidden=true]{display:none}
+.highlight-item{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--navy)}
+.highlight-icon{display:inline-grid;place-items:center;min-width:26px;height:26px;color:var(--teal);font-size:22px;line-height:1}
+.wave-divider{height:30px;background:var(--cream);overflow:hidden;line-height:0}
+.wave-divider svg{display:block;width:100%;height:100%;fill:#f8e1d9}
+.retro-poster{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;overflow:hidden;width:100%;height:clamp(300px,40vw,480px);padding:30px;text-align:center;color:var(--cream);background:var(--navy)}
+.retro-poster:after{content:'';position:absolute;inset:0;z-index:-1;opacity:.55;background:repeating-radial-gradient(ellipse 75% 35% at 50% 115%,transparent 0 17px,#fff4 18px 20px,transparent 21px 37px)}
+.poster-kokomo{background:var(--coral);color:var(--navy)}
+.poster-icon{font-size:36px;line-height:1}
+.retro-poster strong{max-width:420px;font:clamp(32px,4vw,58px)/1.02 var(--display);letter-spacing:-.02em}
+.poster-detail{font-size:14px;font-weight:700;letter-spacing:.15em}
+.extra-visual .retro-poster{height:100%;max-height:none;padding:15px;gap:5px}
+.extra-visual .poster-icon{font-size:24px}
+.extra-visual .retro-poster strong{font-size:clamp(25px,2.3vw,34px)}
+.extra-visual .poster-detail{font-size:14px;letter-spacing:.08em}
+.pelican-block{background:#14213d;color:var(--cream)}
+.pelican-block .feature-content h2,.pelican-block .feature-content h2 em{color:#ffd166}
+.pelican-block .pill-list span{background:transparent;border-color:#9aadc0;color:var(--cream)}
+.pelican-block .button{border-color:var(--teal)}
+.equalizer{display:inline-flex;align-items:end;gap:2px;height:13px;margin-left:6px;vertical-align:middle}
+.equalizer i{display:block;width:3px;height:5px;border-radius:2px;background:var(--yellow);animation:eq-bounce .75s ease-in-out infinite alternate}
+.equalizer i:nth-child(2){height:12px;animation-delay:.18s}.equalizer i:nth-child(3){height:8px;animation-delay:.35s}
+@keyframes eq-bounce{to{height:3px}}
+.strip-card,.extra-card,.guide-card{transition:transform .28s var(--ease),box-shadow .28s var(--ease)}
+.strip-card:hover,.extra-card:hover,.extra-card:nth-child(2):hover,.guide-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px #14213d18}
+.strip-card:hover img,.extra-card:hover img,.guide-card:hover img{transform:scale(1.04)}
+.strip-occupancy{text-transform:none;letter-spacing:0}
+.room-controls{display:flex;gap:9px;margin-left:auto}
+.room-controls button{width:44px;height:44px;border:1px solid var(--teal);border-radius:50%;background:var(--cream);color:var(--teal);font-size:24px;line-height:1;transition:background .2s,transform .2s}
+.room-controls button:hover{background:#dcebe8;transform:translateY(-2px)}
+.detail-gallery{display:block}
+.detail-gallery img:first-child{width:100%;height:min(40vw,480px);object-fit:cover}
+.photo-grid{grid-template-columns:repeat(2,1fr)}
+.mobile-book-bar{display:none}
+@media(max-width:960px){.header-book{display:inline-flex;margin-left:auto;min-height:42px;padding:8px 14px;font-size:14px}.menu-toggle{margin-left:0}.header-inner{gap:12px}}
+@media(max-width:620px){.hero-image{background-position:center 75%}.hero{min-height:0;padding-bottom:6px}.hero-content{padding-top:165px;padding-bottom:28px}.header-inner{height:72px}.brand{width:110px}.header-book{min-height:38px;padding:7px 10px;font-size:14px}.menu-toggle{width:42px}.booking-search{grid-template-columns:1fr 1fr;grid-template-rows:56px 56px;min-height:0;max-height:145px;padding:7px;gap:0;margin-bottom:24px}.booking-search label{min-width:0;padding:4px 8px;gap:0;font-size:14px}.booking-search label:first-child{padding-left:8px}.booking-search label:nth-child(2){border-left:1px solid #d4d7d3}.booking-search label:nth-child(3){grid-column:1;border-top:1px solid #d4d7d3;border-left:0}.booking-search input,.booking-search select{height:27px;font-size:15px}.booking-search .button{grid-column:2;min-height:44px;margin:6px 0 6px 6px;padding:7px 6px;font-size:14px;white-space:normal}.highlight-strip{min-height:52px}.highlight-track{flex:none;gap:28px;padding:10px 24px;animation:highlight-marquee 28s linear infinite}.highlight-track[aria-hidden=true]{display:flex}.highlight-item{font-size:14px}.highlight-icon{font-size:20px}.wave-divider{height:20px}.feature-block,.rooms-strip-section,.extras-section,.rewards-section,.section{padding-block:56px}.section.compact{padding-top:56px}.feature-media img,.feature-media .retro-poster{height:300px;max-height:300px}.pool-badge{width:86px;height:86px;right:10px;top:10px;padding:15px;font-size:16px}.retro-poster strong{font-size:31px}.room-controls{display:none}.detail-gallery img:first-child{height:290px}.photo-grid{grid-template-columns:repeat(2,1fr)}.mobile-book-bar{position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:95;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:9px;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;box-shadow:0 10px 30px #14213d40;opacity:0;pointer-events:none;transform:translateY(120%);transition:opacity .3s var(--ease),transform .3s var(--ease)}.mobile-book-bar.is-visible{opacity:1;pointer-events:auto;transform:translateY(0)}}
+@keyframes highlight-marquee{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.hero-image,.hero h1 span,.equalizer i,.highlight-track{animation:none!important}.hero h1 span{opacity:1;transform:none}.mobile-book-bar{transition:none}.strip-card:hover,.extra-card:hover,.guide-card:hover{transform:none}}
+.highlight-icon svg{width:22px;height:22px}
+.poster-icon{width:56px;height:56px;color:var(--yellow)}
+.poster-kokomo .poster-icon{color:var(--navy)}
+.poster-waves{position:absolute;left:0;right:0;bottom:22px;z-index:-1;width:100%;height:48px;opacity:.35}
+.extra-visual .poster-icon{width:38px;height:38px}
+.extra-visual .poster-waves{bottom:10px;height:30px}
+.guide-art{background:var(--aqua);color:var(--navy);background-image:repeating-radial-gradient(ellipse 80% 40% at 50% 120%,transparent 0 14px,#fff5 15px 17px,transparent 18px 30px)}
+.guide-art.guide-coral{background-color:var(--coral)}.guide-art.guide-yellow{background-color:var(--yellow)}.guide-art.guide-navy{background-color:var(--navy);color:var(--yellow)}
+.guide-icon{width:70px;height:70px}
+@media(max-width:960px){.mobile-menu:not([hidden]){inset:0;z-index:-1;padding:110px 22px 40px;justify-content:flex-start}.menu-toggle{align-self:center}}
+@media(max-width:620px){.header-book{display:none}.menu-toggle{margin-left:auto}.mobile-menu:not([hidden]){padding-top:96px}}
+.nowrap{white-space:nowrap}
+.retro-poster.poster-music{background:var(--coral);color:var(--navy)}
+.poster-music .poster-icon{color:var(--cream)}
+.retro-poster.poster-kokomo{background:var(--navy);color:var(--cream)}
+.poster-kokomo .poster-icon{color:var(--yellow)}
+.hero h1 span:first-child{margin-right:.28em}
