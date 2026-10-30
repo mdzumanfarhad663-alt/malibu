@@ -132,3 +132,15 @@ body{color:var(--navy)}
 .extra-card:nth-child(2):hover{transform:translateY(-6px) rotate(.5deg)}
 @media(max-width:620px){.hero:before{background:linear-gradient(180deg,#10233330 0%,#10233390 38%,#10233380 75%,#10233338 100%)}.hero-content{padding-top:190px;padding-bottom:28px}.hero h1{font-size:32px}.inner-hero:before{background:radial-gradient(ellipse 95% 65% at center,#102333a0 0%,#1023333d 70%,transparent 100%)}.inner-hero-content{padding:25px 0 0}.inner-hero h1{font-size:34px}}
 @media(prefers-reduced-motion:reduce){.button:hover,.extra-card:hover,.extra-card:nth-child(2):hover{transform:none}}
+
+/* The navigation scrolls away; neighborhood copy sits over its photo. */
+.site-header{position:relative;top:auto}
+.home-page .site-header,.home-page .site-header.scrolled{position:absolute;inset:0 0 auto;background:transparent;border:0;box-shadow:none}
+.location-band{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(470px,48vw,620px);color:#fff;background:transparent}
+.location-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;background-position:center 42%}
+.location-overlay{display:block;position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#102333bc 0%,#10233382 47%,#10233318 100%)}
+.location-content{position:relative;padding:78px 0}
+.location-content .eyebrow.light,.location-content h2,.location-content p:not(.eyebrow){color:#fff}
+.location-content h2{max-width:760px}
+.location-content h2 em{color:#ffd166}
+@media(max-width:620px){.location-band{min-height:530px}.location-photo{height:100%;background-position:center}.location-overlay{background:linear-gradient(90deg,#102333bf,#10233368)}.location-content{padding:58px 0}.location-content h2{font-size:32px}}

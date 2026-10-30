@@ -8,11 +8,6 @@ if(toggle&&menu){
   document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
   window.addEventListener('resize',()=>{if(window.innerWidth>960)close()});
 }
-const header=document.querySelector('.site-header');
-if(document.body.classList.contains('home-page')&&header){
-  const syncHeader=()=>header.classList.toggle('scrolled',window.scrollY>60);
-  syncHeader();window.addEventListener('scroll',syncHeader,{passive:true});
-}
 const booking=document.querySelector('[data-booking-form]');
 if(booking){
   const inDate=booking.elements.checkin,outDate=booking.elements.checkout;
