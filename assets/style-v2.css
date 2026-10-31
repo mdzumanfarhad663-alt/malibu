@@ -95,10 +95,10 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 .hero-image{position:absolute;inset:0;z-index:-2;background:url('images/property-05-1600.webp') center 70%/cover no-repeat}
 .hero:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#0e183433 0%,#0e183459 45%,#0e1834b3 100%)}
 .hero-content{padding:calc(var(--header-h) + 60px) 0 36px;text-align:center}
-.hero h1{max-width:980px;margin:0 auto;font-family:var(--display);font-weight:400;letter-spacing:-.01em;text-shadow:0 2px 18px #0e183466}
+.hero h1{max-width:980px;margin:0 auto;font-size:clamp(48px,7vw,96px);font-weight:600;line-height:1;text-shadow:0 2px 18px #0e183466}
 .hero h1 span{display:block;animation:headline-rise .75s var(--ease) both}
 .hero h1 span:nth-child(2){animation-delay:.1s}
-.hero h1 span:last-child{color:var(--yellow);animation-delay:.2s}
+.hero h1 span:last-child{font-style:italic;font-weight:500;color:var(--yellow);animation-delay:.2s}
 @keyframes headline-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
 /* Booking bar: one slim pill row on desktop */
@@ -241,7 +241,7 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 
 /* Location band */
 .location-band{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(460px,46vw,600px);color:#fff}
-.location-photo{position:absolute;inset:0;z-index:-2;background:url('images/beach-800.webp') center 42%/cover no-repeat}
+.location-photo{position:absolute;inset:0;z-index:-2;background:url('images/sunset-gulf-1600.webp') center 60%/cover no-repeat}
 .location-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#14213d66,#14213d14)}
 .location-content{padding-block:var(--section-y)}
 .location-content h2{max-width:720px}
@@ -420,6 +420,47 @@ main{overflow-x:clip}
 /* Fine grain texture across the whole page */
 body:after{content:'';position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.07;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
+
+/* Crusty Pelican week at a glance */
+.vibe-week{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 28px;padding:0;list-style:none}
+.vibe-week li{display:flex;flex-direction:column;gap:4px;padding:12px 12px 14px;border:1.5px solid #ffffff2e;border-radius:var(--radius-sm);background:#ffffff0d}
+.vibe-week b{color:var(--yellow);font:22px/1 var(--display)}
+.vibe-week span{font-size:14px;font-weight:600;line-height:1.3}
+.vibe-week .is-live{border-color:var(--yellow);background:#ffd16614}
+.vibe-week .equalizer{margin-left:6px}
+
+/* Real Crusty Pelican logo as a round sticker */
+.logo-sticker{position:absolute;top:-26px;right:-22px;z-index:3;width:clamp(96px,10vw,132px);aspect-ratio:1;padding:10px;border-radius:50%;background:#fff;object-fit:contain;box-shadow:0 12px 30px #0006;transform:rotate(8deg)}
+.feature-media .logo-sticker{height:auto}
+
+/* Polaroid frames on inner page photos */
+.split .visual{overflow:visible;padding:10px 10px 36px;background:#fff;border-radius:6px;box-shadow:var(--shadow-lg);transform:rotate(-1.5deg)}
+.split.reverse .visual{transform:rotate(1.5deg)}
+.split .visual img,.split .visual .retro-poster{border-radius:3px}
+.photo-stack{position:relative}
+.photo-stack .logo-sticker{top:auto;bottom:-30px;right:-24px;height:auto}
+
+/* Room galleries as polaroid stacks */
+.detail-gallery{position:relative;padding-bottom:28px}
+.detail-gallery img:first-child{padding:10px 10px 34px;background:#fff;border-radius:6px;box-shadow:var(--shadow-lg);transform:rotate(-1.2deg)}
+.detail-room:nth-child(even) .detail-gallery img:first-child{transform:rotate(1.2deg)}
+.detail-gallery img+img{position:absolute;z-index:2;width:38%;height:auto;aspect-ratio:4/3;padding:7px 7px 22px;background:#fff;border-radius:4px;box-shadow:0 14px 30px #14213d40}
+.detail-gallery img:nth-child(2){right:-18px;bottom:-6px;transform:rotate(5deg)}
+.detail-gallery img:nth-child(3){right:30%;bottom:-20px;transform:rotate(-4deg)}
+
+/* Local guide cards as postcards */
+.guide-card{position:relative;padding:10px;border:0;border-radius:6px;transform:rotate(-.8deg)}
+.guide-card:nth-child(even){transform:rotate(.8deg)}
+.guide-card:hover{transform:translateY(-4px) rotate(0)}
+.guide-card img,.guide-card .guide-art{border-radius:3px}
+.guide-card>div:last-child{border-top:0}
+.guide-card:after{content:'';position:absolute;inset:6px;border:1.5px dashed #14213d26;border-radius:4px;pointer-events:none}
+
+/* Property photo wall */
+.photo-grid{grid-template-columns:repeat(3,1fr);gap:22px}
+.photo-grid img{padding:8px 8px 26px;background:#fff;border-radius:5px;box-shadow:var(--shadow);transform:rotate(-1deg)}
+.photo-grid img:nth-child(even){transform:rotate(1.2deg) translateY(14px)}
+
 /* ---------- Tablet ---------- */
 @media(max-width:960px){
   .desktop-nav{display:none}
@@ -476,6 +517,14 @@ body:after{content:'';position:fixed;inset:0;z-index:300;pointer-events:none;opa
   .retro-poster strong{font-size:31px}
   .section-head{display:block;margin-bottom:22px}
   .room-controls{display:none}
+  h1,h2,h3{font-weight:600;letter-spacing:-.015em}
+  .vibe-week{grid-template-columns:repeat(2,1fr)}
+  .logo-sticker{width:84px;top:-18px;right:-8px;padding:7px}
+  .photo-stack .logo-sticker{right:-6px;bottom:-24px}
+  .detail-gallery img+img{width:44%}
+  .detail-gallery img:nth-child(2){right:-6px}
+  .photo-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .split .visual{padding:7px 7px 26px}
   .polaroid{left:auto;right:-6px;bottom:-34px;width:120px;padding:6px 6px 22px}
   .pool-block .feature-media{padding:8px 8px 30px}
   .postcard{transform:none}

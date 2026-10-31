@@ -215,3 +215,16 @@ if(roomStrip){
   roomStrip.addEventListener('scroll',syncDots,{passive:true});
   window.addEventListener('resize',syncDots);
 }
+// Gentle hero parallax (transform only, off under reduced motion)
+const heroPhoto=document.querySelector('.hero-image');
+if(heroPhoto&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  // Clip the moving photo inside the hero so it never paints over the next section
+  const clip=document.createElement('div');
+  clip.style.cssText='position:absolute;inset:0;z-index:-2;overflow:hidden';
+  heroPhoto.before(clip);clip.append(heroPhoto);
+  heroPhoto.style.zIndex='auto';
+  let ticking=false;
+  const drift=()=>{heroPhoto.style.transform=`translate3d(0,${Math.min(scrollY,900)*0.18}px,0) scale(1.06)`;ticking=false};
+  drift();
+  window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(drift)}},{passive:true});
+}

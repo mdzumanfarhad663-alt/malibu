@@ -26,7 +26,9 @@ All complete page code is in the HTML files. The pages share `assets/style-v2.cs
 
 ## Owner confirmation needed
 
-- Provide approved Crusty Pelican live-music and Kokomo photos. Both have labeled placeholders.
+- Provide approved Crusty Pelican live-music, Kokomo and pet photos. The live-music and Kokomo posters and the pet graphic are labeled placeholders.
+- Confirm usage rights for the Local Guide attraction photos (Fort De Soto, John's Pass, Busch Gardens, St. Pete Beach). They were taken from the current Squarespace site and are likely third-party images. The sunset photo is from Unsplash.
+- Confirm the outdoor bar patio photo (`property-06`) shows the Crusty Pelican area.
 - Provide more room-specific gallery photos if desired. Each detailed room currently uses its supplied room photo plus shared property photos.
 - Connect the front-end-only Rewards, group inquiry, and contact forms in WordPress.
 - Confirm Cloudbeds date and guest URL parameters if the booking bar should prefill the reservation page. It currently validates dates and opens the supplied general booking URL.

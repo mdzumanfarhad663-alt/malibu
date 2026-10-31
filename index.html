@@ -5,6 +5,10 @@
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>Malibu Resort Motel | Pool, Live Music &amp; Beach Across the Street | North Redington Beach, FL</title>
   <meta content="Retro motel in North Redington Beach with a heated pool, live music, onsite Crusty Pelican bar and grill, and the Gulf just across the street." name="description"/>
+  <link href="assets/images/logo.png" rel="icon" type="image/png"/>
+  <meta content="Malibu Resort Motel" property="og:site_name"/>
+  <meta content="website" property="og:type"/>
+  <meta content="assets/images/property-05-1600.webp" property="og:image"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&amp;family=Righteous&amp;display=swap" rel="stylesheet"/>
@@ -72,6 +76,7 @@
       <div class="feature-media has-polaroid"><!-- RETRO POSTER PLACEHOLDER: replace this whole div with <img src="assets/images/crusty-pelican-live-music.jpg" alt="..."> when the client supplies a real Crusty Pelican live music photo. -->
         <div aria-label="Retro graphic poster for Crusty Pelican live music Thursday through Sunday" class="retro-poster poster-music" role="img"><svg aria-hidden="true" class="poster-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><strong>LIVE MUSIC <span class="nowrap">THU–SUN</span></strong><span class="poster-detail">CRUSTY PELICAN · MALIBU</span><svg aria-hidden="true" class="poster-waves" preserveAspectRatio="none" viewBox="0 0 400 60"><path d="M0 20q50-20 100 0t100 0 100 0 100 0M0 40q50-20 100 0t100 0 100 0 100 0" fill="none" stroke="currentColor" stroke-width="4"/></svg>
         </div>
+        <img alt="Crusty Pelican logo" class="logo-sticker" loading="lazy" src="assets/images/crusty-pelican-logo-800.webp"/>
         <figure class="polaroid"><img alt="Outdoor bar patio at Malibu Resort Motel" loading="lazy" src="assets/images/property-06-800.webp" srcset="assets/images/property-06-800.webp 800w" sizes="260px"/></figure>
       </div>
       <div class="feature-content">
@@ -79,8 +84,12 @@
         </h2>
         <p>Pizza, wings, tropical drinks and a full bar—right here on the property. The music is live; the vibe is easy.
         </p>
-        <div aria-label="Weekly lineup" class="pill-list"><span>Taco Tue</span><span>Wings &amp; Bingo Wed</span><span>Live Music Thu–Sun<span aria-hidden="true" class="equalizer"><i></i><i></i><i></i></span></span><span>Sunday Brunch</span>
-        </div>
+        <ul aria-label="Weekly lineup" class="vibe-week">
+          <li><b>Tue</b><span>Taco Tue</span></li>
+          <li><b>Wed</b><span>Wings &amp; Bingo</span></li>
+          <li class="is-live"><b>Thu–Sun</b><span>Live Music<span aria-hidden="true" class="equalizer"><i></i><i></i><i></i></span></span></li>
+          <li><b>Sun</b><span>Sunday Brunch</span></li>
+        </ul>
         <div class="button-row">
           <a class="button" href="https://beta.tabwright.com/order/crusty-pelican" rel="noopener noreferrer" target="_blank">Menu &amp; Order</a>
           <a class="button secondary-action" href="https://www.facebook.com/share/1YWHw7oqLN/" rel="noopener noreferrer" target="_blank">Music Calendar</a>
