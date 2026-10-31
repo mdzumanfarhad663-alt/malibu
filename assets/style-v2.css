@@ -417,8 +417,9 @@ main{overflow-x:clip}
 .tier-badges div{border:0;background:var(--navy);color:var(--cream);box-shadow:inset 0 0 0 5px var(--navy),inset 0 0 0 7px var(--yellow)}
 .tier-badges strong{color:var(--yellow)}
 
-/* Fine grain texture across the whole page */
-body:after{content:'';position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.07;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* Fine grain texture on flat color blocks only (never over photos) */
+:root{--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E")}
+body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted,.site-footer,.inner-hero.hero-split{background-image:var(--grain)}
 
 
 /* Crusty Pelican week at a glance */
