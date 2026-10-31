@@ -64,7 +64,7 @@ if(rewardNumbers.length&&'IntersectionObserver' in window&&!window.matchMedia('(
   observer.observe(document.querySelector('.tier-badges'));
 }
 if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const revealItems=document.querySelectorAll('.feature-layout > *, .section-head, .strip-card, .extra-card, .location-content > *, .rewards-grid > *, .detail-room, .split > *, .photo-grid img, .guide-card, .form-layout > *, .faq-list details, .site-footer .footer-grid > div');
+  const revealItems=document.querySelectorAll('.feature-layout > *, .section-head, .strip-card, .extra-card, .location-content > *, .rewards-grid > *, .detail-room, .split > *, .photo-grid img, .guide-card, .form-layout > *, .faq-list details');
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
     if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}
   }),{threshold:.06,rootMargin:'0px 0px -15px 0px'});
