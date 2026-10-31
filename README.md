@@ -22,7 +22,7 @@ malibu/ (repository root)
   README.md
 ```
 
-All complete page code is in the HTML files. The pages share `assets/style-v2.css` and `assets/script.js`. `download_images.py` lists every local image filename and its supplied source URL. The downloaded files are included in `assets/images/`.
+All complete page code is in the HTML files. The pages share `assets/style-v2.css` and `assets/script.js`. `download_images.py` lists every local image filename and its supplied source URL. The downloaded files are included in `assets/images/`. Pages serve WebP copies (`name-800.webp`, `name-1600.webp`) through `srcset`; the original JPGs stay as masters for the WordPress rebuild.
 
 ## Owner confirmation needed
 
