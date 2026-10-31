@@ -67,7 +67,7 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 .text-link:hover{color:var(--teal-dark)}
 
 /* ---------- Header ---------- */
-.site-header{position:fixed;inset:0 0 auto;z-index:80;transition:background .25s,box-shadow .25s}
+.site-header{position:absolute;inset:0 0 auto;z-index:80;transition:background .25s,box-shadow .25s}
 .header-inner{display:flex;align-items:center;gap:28px;height:var(--header-h)}
 .brand{flex:none;width:136px}
 .brand img{width:auto;max-height:64px;object-fit:contain;transition:filter .25s}
@@ -86,19 +86,18 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 .site-header:not(.scrolled):not(.menu-active) .desktop-nav a{color:#fff;text-shadow:0 1px 8px #0e1834b3}
 .site-header:not(.scrolled):not(.menu-active) .menu-toggle{background:#0e183455}
 .site-header:not(.scrolled):not(.menu-active) .menu-toggle span{background:#fff}
-.site-header.scrolled,.site-header.menu-active{background:var(--cream);box-shadow:0 8px 24px #14213d1a}
+.site-header.menu-active{background:var(--cream);box-shadow:0 8px 24px #14213d1a}
 .mobile-menu{display:none}
 
 /* ---------- Home hero ---------- */
 .hero{position:relative;z-index:5;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(640px,100svh,880px);color:#fff}
-.hero-image{position:absolute;inset:0;z-index:-2;background:url('images/property-03-1600.webp') center 60%/cover no-repeat}
+.hero-image{position:absolute;inset:0;z-index:-2;background:url('images/property-06-1600.webp') center 55%/cover no-repeat}
 .hero:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#0e183433 0%,#0e183459 45%,#0e1834b3 100%)}
 .hero-content{padding:calc(var(--header-h) + 60px) 0 36px;text-align:center}
 .hero h1{max-width:980px;margin:0 auto;text-shadow:0 2px 18px #0e183466}
-.hero h1 span{display:inline-block;animation:headline-rise .75s var(--ease) both}
-.hero h1 span:first-child{margin-right:.28em}
+.hero h1 span{display:block;animation:headline-rise .75s var(--ease) both}
 .hero h1 span:nth-child(2){animation-delay:.1s}
-.hero h1 span:last-child{display:block;color:var(--yellow);animation-delay:.2s}
+.hero h1 span:last-child{color:var(--yellow);animation-delay:.2s}
 @keyframes headline-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
 /* Booking bar: one slim pill row on desktop */
@@ -189,6 +188,8 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 
 /* Pool bubbles (injected by script.js) */
 .fx-layer{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.fx-note{position:absolute;bottom:-30px;color:var(--yellow);font-size:26px;opacity:0;animation:note-float linear infinite}
+@keyframes note-float{0%{opacity:0;transform:translate(0,0) rotate(0)}20%{opacity:.55}100%{opacity:0;transform:translate(var(--drift),-90vh) rotate(25deg)}}
 .fx-bubble{position:absolute;bottom:-40px;border:2px solid #ffffffa0;border-radius:50%;background:#ffffff26;opacity:0;animation:bubble-rise linear infinite}
 @keyframes bubble-rise{0%{opacity:0;transform:translate(0,0) scale(.6)}15%{opacity:.9}100%{opacity:0;transform:translate(var(--drift),-110vh) scale(1.1)}}
 
@@ -207,7 +208,11 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 .room-controls{display:flex;gap:10px}
 .room-controls button{display:grid;place-items:center;width:46px;height:46px;border:1.5px solid var(--teal);border-radius:50%;background:transparent;color:var(--teal);font-size:22px;line-height:1;transition:background .2s,color .2s}
 .room-controls button:hover{background:var(--teal);color:#fff}
-.rooms-scroller{display:flex;gap:20px;padding:4px 4px 24px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:var(--teal) var(--line)}
+.rooms-scroller{display:flex;gap:20px;padding:4px 4px 24px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;scrollbar-width:none}
+.rooms-scroller::-webkit-scrollbar{display:none}
+.room-dots{display:flex;justify-content:center;gap:10px;margin-top:4px}
+.room-dots button{width:10px;height:10px;padding:0;border:0;border-radius:999px;background:#c9d3d1;transition:width .3s var(--ease),background .3s}
+.room-dots button[aria-current=true]{width:28px;background:var(--teal)}
 .strip-card{flex:0 0 clamp(270px,28vw,360px);scroll-snap-align:start}
 .strip-image img{width:100%;height:230px;object-fit:cover}
 .strip-card-content{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:22px}
@@ -392,7 +397,7 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
   .menu-toggle{margin-left:auto}
 
   .hero{min-height:0}
-  .hero-image{background-position:center 75%}
+  .hero-image{background-position:center 60%}
   .hero:before{background:linear-gradient(180deg,#0e183440 0%,#0e183466 40%,#0e1834a6 100%)}
   .hero-content{padding:calc(var(--header-h) + 120px) 0 24px}
   .hero h1{font-size:32px;line-height:1.15}

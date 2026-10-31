@@ -8,12 +8,10 @@ if(toggle&&menu){
   document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
   window.addEventListener('resize',()=>{if(window.innerWidth>960)close()});
 }
-const siteHeader=document.querySelector('.site-header');
 const mobileBook=document.querySelector('.mobile-book-bar');
 const pageHero=document.querySelector('.hero, .inner-hero');
 const siteFooter=document.querySelector('.site-footer');
 const syncScrollUI=()=>{
-  siteHeader?.classList.toggle('scrolled',window.scrollY>80);
   if(mobileBook&&pageHero&&siteFooter){
     const pastHero=window.scrollY>pageHero.offsetTop+pageHero.offsetHeight-60;
     const beforeFooter=siteFooter.getBoundingClientRect().top>window.innerHeight-30;
@@ -90,6 +88,7 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     }
     section.prepend(layer);
   };
+  addFx(document.querySelector('.pelican-block'),9,()=>{const n=document.createElement('span');n.className='fx-note';n.textContent=Math.random()>.5?'♪':'♫';return n});
   addFx(document.querySelector('.pool-block'),14,()=>{const b=document.createElement('span');b.className='fx-bubble';const size=10+Math.random()*26;b.style.width=b.style.height=`${size}px`;return b});
 }
 // Booking bar date range calendar and guests dropdown
@@ -192,4 +191,27 @@ if(searchForm){
   }
   document.addEventListener('click',e=>{if(!searchForm.contains(e.target))closeAll()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
+}
+// Room strip dots: one per card, synced to scroll position
+const roomStrip=document.querySelector('.rooms-scroller');
+if(roomStrip){
+  const cards=[...roomStrip.querySelectorAll('.strip-card')];
+  const dots=document.createElement('div');
+  dots.className='room-dots';dots.setAttribute('aria-label','Choose a room');
+  cards.forEach((card,i)=>{
+    const dot=document.createElement('button');
+    dot.type='button';dot.setAttribute('aria-label',`Show ${card.querySelector('h3').textContent}`);
+    dot.addEventListener('click',()=>roomStrip.scrollTo({left:card.offsetLeft-roomStrip.offsetLeft,behavior:'smooth'}));
+    dots.append(dot);
+  });
+  roomStrip.after(dots);
+  const syncDots=()=>{
+    const maxScroll=roomStrip.scrollWidth-roomStrip.clientWidth;
+    let active=cards.findIndex(card=>card.offsetLeft-roomStrip.offsetLeft>=roomStrip.scrollLeft-10);
+    if(roomStrip.scrollLeft>=maxScroll-10)active=cards.length-1;
+    [...dots.children].forEach((dot,i)=>dot.setAttribute('aria-current',String(i===active)));
+  };
+  syncDots();
+  roomStrip.addEventListener('scroll',syncDots,{passive:true});
+  window.addEventListener('resize',syncDots);
 }
