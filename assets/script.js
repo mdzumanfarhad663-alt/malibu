@@ -59,7 +59,7 @@ const rewardNumbers=document.querySelectorAll('[data-count]');
 if(rewardNumbers.length&&'IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
     if(!entry.isIntersecting)return;
-    observer.unobserve(entry.target);
+    observer.unobserve(entry.target);entry.target.classList.add('is-counted');
     const start=performance.now(),numbers=entry.target.querySelectorAll('[data-count]');
     const frame=now=>{
       const progress=Math.min((now-start)/1000,1);
@@ -83,3 +83,25 @@ document.querySelectorAll('[data-us-date]').forEach(field=>field.addEventListene
   const digits=field.value.replace(/\D/g,'').slice(0,8);
   field.value=[digits.slice(0,2),digits.slice(2,4),digits.slice(4)].filter(Boolean).join('/');
 }));
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const progress=document.createElement('div');
+  progress.className='scroll-progress';progress.setAttribute('aria-hidden','true');
+  document.body.prepend(progress);
+  const syncProgress=()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.transform=`scaleX(${max>0?scrollY/max:0})`};
+  syncProgress();window.addEventListener('scroll',syncProgress,{passive:true});
+  const addFx=(section,count,make)=>{
+    if(!section)return;
+    const layer=document.createElement('div');layer.className='fx-layer';layer.setAttribute('aria-hidden','true');
+    for(let i=0;i<count;i++){
+      const el=make();
+      el.style.left=`${Math.random()*100}%`;
+      el.style.setProperty('--drift',`${(Math.random()-.5)*80}px`);
+      el.style.animationDuration=`${8+Math.random()*8}s`;
+      el.style.animationDelay=`${-Math.random()*12}s`;
+      layer.append(el);
+    }
+    section.prepend(layer);
+  };
+  addFx(document.querySelector('.pool-block'),14,()=>{const b=document.createElement('span');b.className='fx-bubble';const size=10+Math.random()*26;b.style.width=b.style.height=`${size}px`;return b});
+  addFx(document.querySelector('.pelican-block'),9,()=>{const n=document.createElement('span');n.className='fx-note';n.textContent=Math.random()>.5?'♪':'♫';return n});
+}

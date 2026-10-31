@@ -225,3 +225,36 @@ body{color:var(--navy)}
 .retro-poster.poster-kokomo{background:var(--navy);color:var(--cream)}
 .poster-kokomo .poster-icon{color:var(--yellow)}
 .hero h1 span:first-child{margin-right:.28em}
+/* Fun layer: playful motion, transform/opacity only, all disabled under reduced motion */
+.scroll-progress{position:fixed;top:0;left:0;right:0;z-index:120;height:4px;background:linear-gradient(90deg,var(--coral),var(--yellow),var(--aqua));transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+.button{position:relative;overflow:hidden;isolation:isolate}
+.button:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 30%,#ffffff40 50%,transparent 70%);transform:translateX(-120%);transition:transform .6s var(--ease)}
+.button:hover:after{transform:translateX(120%)}
+.wave-divider{position:relative}
+.wave-divider svg{width:200%;animation:wave-sway 14s linear infinite}
+@keyframes wave-sway{to{transform:translateX(-50%)}}
+.pool-badge{animation:badge-wobble 4s ease-in-out infinite}
+@keyframes badge-wobble{0%,100%{transform:rotate(12deg) scale(1)}50%{transform:rotate(-4deg) scale(1.08)}}
+.poster-icon{animation:icon-bob 2.6s ease-in-out infinite}
+@keyframes icon-bob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-8px) rotate(6deg)}}
+.retro-poster strong{transition:transform .4s var(--ease)}
+.retro-poster:hover strong{transform:scale(1.05) rotate(-2deg)}
+.fx-layer{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.feature-block{position:relative}.feature-block>.wrap{position:relative;z-index:1}
+.fx-bubble{position:absolute;bottom:-40px;border-radius:50%;border:2px solid #ffffffa0;background:#ffffff26;opacity:0;animation:bubble-rise linear infinite}
+@keyframes bubble-rise{0%{opacity:0;transform:translate(0,0) scale(.6)}15%{opacity:.9}100%{opacity:0;transform:translate(var(--drift),-110vh) scale(1.1)}}
+.fx-note{position:absolute;bottom:-30px;color:var(--yellow);opacity:0;font-size:26px;animation:note-float linear infinite}
+@keyframes note-float{0%{opacity:0;transform:translate(0,0) rotate(0)}20%{opacity:.55}100%{opacity:0;transform:translate(var(--drift),-90vh) rotate(25deg)}}
+.strip-card:nth-child(odd):hover{transform:translateY(-4px) rotate(-1deg)}
+.strip-card:nth-child(even):hover{transform:translateY(-4px) rotate(1deg)}
+.tier-badges div{transition:transform .4s var(--ease)}
+.tier-badges div:hover{transform:rotate(0) scale(1.08)}
+.tier-badges.is-counted div{animation:tier-pop .6s var(--ease) both}
+.tier-badges.is-counted div:nth-child(2){animation-delay:.12s}.tier-badges.is-counted div:nth-child(3){animation-delay:.24s}
+@keyframes tier-pop{0%{transform:scale(.7) rotate(-20deg);opacity:0}100%{opacity:1}}
+.highlight-item:hover .highlight-icon{animation:icon-bob 1s ease-in-out infinite}
+.reveal-ready:nth-child(even){transform:translateY(25px) rotate(1.5deg)}
+.reveal-ready.is-visible:nth-child(even){transform:none}
+.location-content h2 em{display:inline-block;animation:sun-glow 3s ease-in-out infinite}
+@keyframes sun-glow{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg) scale(1.03)}}
+@media(prefers-reduced-motion:reduce){.scroll-progress,.fx-layer{display:none}.wave-divider svg,.pool-badge,.poster-icon,.tier-badges div,.location-content h2 em,.highlight-item .highlight-icon{animation:none!important}.button:after{display:none}.strip-card:hover,.tier-badges div:hover{transform:none!important}.reveal-ready:nth-child(even){transform:none}}
