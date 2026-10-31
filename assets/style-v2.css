@@ -495,9 +495,9 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
 
   .hero{min-height:0}
   .hero-image{background-position:center 75%}
-  .hero:before{background:linear-gradient(180deg,#0e183440 0%,#0e183466 40%,#0e1834a6 100%)}
+  .hero:before{background:linear-gradient(180deg,#0e183466 0%,#0e183499 40%,#0e1834cc 100%)}
   .hero-content{padding:calc(var(--header-h) + 120px) 0 24px}
-  .hero h1{font-size:32px;line-height:1.15}
+  .hero h1{font-size:38px;line-height:1.08}
   .booking-search{grid-template-columns:1fr 1fr;max-height:150px;margin-bottom:24px;padding:6px;border-radius:var(--radius)}
   .booking-search label{padding:6px 10px;border-radius:var(--radius-sm)}
   .booking-search label:nth-child(3):before{display:none}
@@ -533,13 +533,22 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
   .postcard-stamp{top:16px;right:16px;width:52px;height:58px}
   .rooms-scroller{margin-right:-16px;padding-right:16px}
   .strip-card{flex-basis:82vw;max-width:320px}
-  .extras-grid,.guide-grid{grid-template-columns:1fr}
+  .guide-grid{grid-template-columns:1fr}
+  .extras-grid{display:flex;gap:14px;margin-right:-16px;padding:4px 16px 18px 0;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .extras-grid::-webkit-scrollbar{display:none}
+  .extra-card{flex:0 0 78vw;max-width:300px;scroll-snap-align:start}
+  .extra-visual{height:170px}
+  .extra-card>div:last-child{padding:18px}
+  .extra-card p{font-size:15px}
   .location-band{min-height:500px}
   .location-overlay{background:linear-gradient(90deg,#14213dcc,#14213d73)}
-  .tier-badges{gap:8px}
+  .rewards-grid{gap:28px}
+  .rewards-copy h2{margin-bottom:12px}
+  .tier-badges{gap:8px;margin-top:20px}
   .tier-badges div{width:calc((100% - 16px)/3);max-width:116px;height:auto;aspect-ratio:1;padding:6px}
   .tier-badges strong{font-size:27px}
-  .site-form{padding:22px}
+  .site-form{gap:12px;padding:20px}
+  .site-form input{min-height:44px}
   .site-form h2,.site-form h3{font-size:26px}
   .two-fields{grid-template-columns:1fr}
 
