@@ -591,3 +591,7 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
 /* Text legibility over lighter photo overlays */
 .hero p,.hero .eyebrow,.inner-hero:not(.hero-split) h1,.inner-hero:not(.hero-split) p{text-shadow:0 1px 4px #0e183499,0 2px 18px #0e183480}
 .site-form input[type=date]{cursor:pointer}
+/* Property photo wall hover: straighten, lift and zoom slightly */
+.photo-grid img{transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+@media(hover:hover){.photo-grid img:hover,.photo-grid img:nth-child(even):hover{position:relative;z-index:2;transform:rotate(0) translateY(-8px) scale(1.04);box-shadow:var(--shadow-lg)}}
+@media(prefers-reduced-motion:reduce){.photo-grid img{transition:none}}
