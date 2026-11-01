@@ -431,15 +431,15 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
 .vibe-week .equalizer{margin-left:6px}
 
 /* Real Crusty Pelican logo as a round sticker */
-.logo-sticker{position:absolute;top:-26px;right:-22px;z-index:3;width:clamp(96px,10vw,132px);aspect-ratio:1;padding:10px;border-radius:50%;background:#fff;object-fit:contain;box-shadow:0 12px 30px #0006;transform:rotate(8deg)}
-.feature-media .logo-sticker{width:clamp(96px,10vw,132px);height:auto}
+.logo-sticker{position:absolute;top:-26px;right:-22px;z-index:3;width:clamp(110px,11vw,150px);aspect-ratio:800/1043;padding:8px;border-radius:12px;background:#fff;object-fit:contain;box-shadow:0 12px 30px #0006;transform:rotate(8deg)}
+.feature-media .logo-sticker{width:clamp(110px,11vw,150px);height:auto}
 
 /* Polaroid frames on inner page photos */
 .split .visual{overflow:visible;padding:10px 10px 36px;background:#fff;border-radius:6px;box-shadow:var(--shadow-lg);transform:rotate(-1.5deg)}
 .split.reverse .visual{transform:rotate(1.5deg)}
 .split .visual img,.split .visual .retro-poster{border-radius:3px}
 .photo-stack{position:relative}
-.photo-stack .logo-sticker{top:auto;bottom:-30px;right:-24px;width:clamp(96px,10vw,132px);height:auto}
+.photo-stack .logo-sticker{top:auto;bottom:-30px;right:-24px;width:clamp(110px,11vw,150px);height:auto}
 
 /* Room galleries as polaroid stacks */
 .detail-gallery{position:relative;padding-bottom:28px}
@@ -520,7 +520,7 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
   .room-controls{display:none}
   h1,h2,h3{font-weight:600;letter-spacing:-.015em}
   .vibe-week{grid-template-columns:repeat(2,1fr)}
-  .logo-sticker,.feature-media .logo-sticker,.photo-stack .logo-sticker{width:84px;height:84px;max-width:84px;top:-18px;right:-8px;padding:7px}
+  .logo-sticker,.feature-media .logo-sticker,.photo-stack .logo-sticker{width:96px;height:auto;max-width:96px;top:-22px;right:-8px;padding:6px;border-radius:10px}
   .photo-stack .logo-sticker{top:auto;right:-6px;bottom:-24px}
   .detail-gallery img+img{width:44%}
   .detail-gallery img:nth-child(2){right:-6px}
