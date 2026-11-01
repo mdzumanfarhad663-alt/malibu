@@ -93,9 +93,9 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 /* ---------- Home hero ---------- */
 .hero{position:relative;z-index:5;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(640px,100svh,880px);color:#fff}
 .hero-image{position:absolute;inset:0;z-index:-2;background:url('images/property-05-1600.webp') center 70%/cover no-repeat}
-.hero:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#0e183433 0%,#0e183459 45%,#0e1834b3 100%)}
+.hero:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#0e183414 0%,#0e183426 45%,#0e183480 100%)}
 .hero-content{padding:calc(var(--header-h) + 60px) 0 36px;text-align:center}
-.hero h1{max-width:980px;margin:0 auto;font-size:clamp(48px,7vw,96px);font-weight:600;line-height:1;text-shadow:0 2px 18px #0e183466}
+.hero h1{max-width:980px;margin:0 auto;font-size:clamp(48px,7vw,96px);font-weight:600;line-height:1;text-shadow:0 2px 6px #0e183480,0 4px 28px #0e183499}
 .hero h1 span{display:block;animation:headline-rise .75s var(--ease) both}
 .hero h1 span:nth-child(2){animation-delay:.1s}
 .hero h1 span:last-child{font-style:italic;font-weight:500;color:var(--yellow);animation-delay:.2s}
@@ -242,7 +242,7 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 /* Location band */
 .location-band{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(460px,46vw,600px);color:#fff}
 .location-photo{position:absolute;inset:0;z-index:-2;background:url('images/sunset-gulf-1600.webp') center 60%/cover no-repeat}
-.location-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#14213d66,#14213d14)}
+.location-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#14213d4d,#14213d00)}
 .location-content{padding-block:var(--section-y)}
 .location-content h2{max-width:720px}
 .location-content h2 em{color:var(--teal)}
@@ -307,7 +307,7 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 /* ---------- Inner page heroes ---------- */
 /* Full-photo variant (property, contact): title bottom-left */
 .inner-hero{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:440px;padding-top:var(--header-h);background:var(--inner-image) center/cover no-repeat;color:#fff}
-.inner-hero:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#14213dd0 0%,#14213d40 60%,#14213d26 100%)}
+.inner-hero:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#14213d99 0%,#14213d1a 60%,#14213d00 100%)}
 .inner-hero-content{padding-bottom:56px}
 .inner-hero h1{max-width:820px;margin:0;font-size:clamp(40px,5vw,68px)}
 /* Split variant: color block + photo panel */
@@ -495,7 +495,7 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
 
   .hero{min-height:0}
   .hero-image{background-position:center 75%}
-  .hero:before{background:linear-gradient(180deg,#0e183466 0%,#0e183499 40%,#0e1834cc 100%)}
+  .hero:before{background:linear-gradient(180deg,#0e183426 0%,#0e183440 40%,#0e183499 100%)}
   .hero-content{padding:calc(var(--header-h) + 120px) 0 24px}
   .hero h1{font-size:38px;line-height:1.08}
   .booking-search{grid-template-columns:1fr 1fr;max-height:150px;margin-bottom:24px;padding:6px;border-radius:var(--radius)}
@@ -541,7 +541,7 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
   .extra-card>div:last-child{padding:18px}
   .extra-card p{font-size:15px}
   .location-band{min-height:500px}
-  .location-overlay{background:linear-gradient(90deg,#14213dcc,#14213d73)}
+  .location-overlay{background:linear-gradient(90deg,#14213d8c,#14213d33)}
   .rewards-grid{gap:28px}
   .rewards-copy h2{margin-bottom:12px}
   .tier-badges{gap:8px;margin-top:20px}
@@ -587,3 +587,7 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
   .button:hover,.strip-card:hover,.extra-card:hover,.guide-card:hover{transform:none}
 }
 .footer-collection summary h2,.footer-collection summary span{white-space:nowrap}
+
+/* Text legibility over lighter photo overlays */
+.hero p,.hero .eyebrow,.inner-hero:not(.hero-split) h1,.inner-hero:not(.hero-split) p{text-shadow:0 1px 4px #0e183499,0 2px 18px #0e183480}
+.site-form input[type=date]{cursor:pointer}

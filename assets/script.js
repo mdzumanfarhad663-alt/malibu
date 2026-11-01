@@ -74,6 +74,14 @@ document.querySelectorAll('[data-us-date]').forEach(field=>field.addEventListene
   const digits=field.value.replace(/\D/g,'').slice(0,8);
   field.value=[digits.slice(0,2),digits.slice(2,4),digits.slice(4)].filter(Boolean).join('/');
 }));
+// Native date pickers: no past dates, departure after arrival
+const pickers=[...document.querySelectorAll('[data-date-picker]')];
+if(pickers.length){
+  const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+  pickers.forEach(field=>{field.min=today.toISOString().slice(0,10);field.addEventListener('click',()=>{try{field.showPicker()}catch(e){}})});
+  const [arrive,depart]=pickers;
+  if(depart)arrive.addEventListener('change',()=>{depart.min=arrive.value||arrive.min;if(depart.value&&depart.value<=arrive.value)depart.value=''});
+}
 if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   const addFx=(section,count,make)=>{
     if(!section)return;
