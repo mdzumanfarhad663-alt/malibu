@@ -320,6 +320,8 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 .hero-navy{--split-bg:var(--navy);color:var(--cream)}
 .hero-navy h1{color:var(--yellow)}
 .hero-yellow{--split-bg:var(--yellow);color:var(--navy)}
+.hero-teal{--split-bg:var(--teal);color:var(--cream)}
+.hero-teal h1{color:var(--yellow)}
 
 .anchor-nav{display:flex;flex-wrap:wrap;gap:10px;padding-top:28px}
 .anchor-nav a{padding:8px 16px;border:1.5px solid var(--navy);border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s,color .2s}
