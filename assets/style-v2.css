@@ -282,8 +282,8 @@ section[id]{scroll-margin-top:calc(var(--header-h) + 12px)}
 .site-footer a{color:#d3dce1;text-decoration:none;transition:color .2s}
 .site-footer a:hover{color:#fff}
 .footer-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding-bottom:36px;border-bottom:1px solid #2c3a57}
-.footer-logo{display:inline-grid;margin-bottom:10px;color:#fff;font:44px/.9 var(--display);text-decoration:none}
-.footer-logo span{font:700 14px/2.2 var(--font);letter-spacing:.22em;color:var(--yellow)}
+.footer-logo{display:inline-block;margin-bottom:12px}
+.footer-logo img{width:180px;height:auto;filter:brightness(0) invert(1)}
 .footer-brand p{max-width:360px;margin:0}
 .footer-main{display:grid;grid-template-columns:1fr auto;gap:40px;padding:36px 0}
 .footer-contact{display:flex;flex-direction:column;gap:6px;font-style:normal}
@@ -570,7 +570,7 @@ body,.pool-block,.pelican-block,.extras-section,.rewards-section,.section.tinted
 
   .site-footer{padding-top:48px}
   .footer-top{flex-direction:column;align-items:flex-start;padding-bottom:28px}
-  .footer-logo{font-size:36px}
+  .footer-logo img{width:150px}
   .footer-main{grid-template-columns:1fr;gap:28px;padding:28px 0}
   .footer-collection ul{grid-template-columns:1fr 1fr}
   .footer-bottom{flex-direction:column;gap:4px;padding-bottom:28px}
